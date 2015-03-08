@@ -25,7 +25,7 @@ namespace CRXDownloader
             string[] tokens = szPath.Split(delimiter, StringSplitOptions.RemoveEmptyEntries);
             int iLen = tokens.Length;
             string[] szExtensionID = tokens[tokens.Length - 1].Split(delimiter2, StringSplitOptions.None);
-            string szDownloadPath = "https://clients2.google.com/service/update2/crx?response=redirect&x=id%3D" + szExtensionID[0] + "%26uc";
+            string szDownloadPath = "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=38.0&x=id%3D"+szExtensionID[0]+"%26installsource%3Dondemand%26uc ";
             WebClient webClient = new WebClient();
             string szFile = tokens[tokens.Length-2] + ".crx";
             webClient.DownloadFile(szDownloadPath, szFile);
